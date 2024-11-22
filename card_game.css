@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: skyblue;
+    background-image: url(./images/wallpaperflare.com_wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+}
+h1 {
+
+    color: rgb(0, 212, 0);
+    margin-bottom: 2rem;
+}
+main{
+    border: 1px solid;
+    padding: 5rem;
+    min-width: 50%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.375);
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    
+}
+main p{
+margin-top:2rem;
+color:silver;
+}
+.message-cl
+{
+    font-style: italic;
+}   
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap:1rem
+}
+.buttons button
+{
+    padding:1rem;
+    background-color: rgba(172, 255, 47, 0.494);
+    font-size: 2rem;
+    margin-top:3rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    border: none;
+    cursor:pointer;
+    color:green;
+}
+
+.buttons #reset-btn
+{
+    background-color: rgba(255, 0, 0, 0.606) !important;
+    color:rgb(117, 0, 0);
+}
+#start-btn:hover,#reset-btn:hover
+{
+    padding:0.9rem;
+    margin-top:3.2rem;
+}
