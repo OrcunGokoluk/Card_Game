@@ -1,6 +1,4 @@
 
-let firstCard=10;
-let secondCard=11;
 let hasTwentyOne=false;
 let isAlive=true;
 
@@ -9,13 +7,29 @@ const messageEl=document.getElementById("message-el");
 const sumEl=document.querySelector("main p:nth-child(4)");
 const cardsEl=document.getElementById("cards-el");
 
-const sum=firstCard+secondCard;
+let sum = 0;
+let card =0;
 
 
 function startGame()
 {
-    sumEl.textContent+=sum;
-    cardsEl.textContent+=firstCard+" - "+secondCard;
+
+    sum=0;
+    card=0;
+
+    cardsEl.textContent="Cards: "
+    sumEl.textContent="Sum: "+sum;
+    
+
+    renderGame();
+    messageEl.textContent="Want to play a round?";
+}
+
+function renderGame()
+{
+
+    cardsEl.textContent+=card+" - ";
+    sumEl.textContent="Sum: "+sum;
 
     if(sum<21){
         message="Do you want to draw a new card?";
@@ -32,6 +46,18 @@ function startGame()
         isAlive=false;
     }
 }
+
+
+
+function newCard()
+{
+    card=Math.ceil(Math.random()*11);
+    sum+=card;
+    renderGame();
+}
+
+
+
 
 
 console.log(message);

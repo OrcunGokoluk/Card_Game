@@ -13,12 +13,13 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 h1 {
 
     color: rgb(0, 212, 0);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    white-space: nowrap;
 }
 main{
     border: 1px solid;
@@ -37,6 +38,7 @@ main{
 main p{
 margin-top:2rem;
 color:silver;
+white-space: nowrap;
 }
 .message-cl
 {
@@ -44,15 +46,17 @@ color:silver;
 }   
 .buttons{
     display: flex;
-    flex-direction: row;
-    gap:1rem
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-evenly;
+    gap:1rem;
+    margin-top:3rem
 }
 .buttons button
 {
     padding:1rem;
     background-color: rgba(172, 255, 47, 0.494);
     font-size: 2rem;
-    margin-top:3rem;
     font-weight: bold;
     border-radius: 1rem;
     border: none;
@@ -60,13 +64,28 @@ color:silver;
     color:green;
 }
 
+.buttons button:nth-child(1)
+{
+    white-space:nowrap;
+}
+.buttons button:nth-child(2)
+{
+    background-color: rgba(0, 0, 255, 0.525);
+    color: rgb(0, 0, 120);
+    white-space: nowrap;
+}
+
 .buttons #reset-btn
 {
     background-color: rgba(255, 0, 0, 0.606) !important;
     color:rgb(117, 0, 0);
 }
-#start-btn:hover,#reset-btn:hover
+.buttons button:hover
 {
-    padding:0.9rem;
-    margin-top:3.2rem;
+  background-color: rgb(172, 255, 47);;
+}
+
+.buttons button:nth-child(2):hover
+{
+  background-color: rgb(80, 49, 255);
 }
