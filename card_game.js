@@ -18,30 +18,20 @@ function startGame()
     cardsEl.textContent+=firstCard+" - "+secondCard;
 
     if(sum<21){
-        message="Do you want to draw a new card? 🙂";
+        message="Do you want to draw a new card?";
         messageEl.textContent=message;
     }
     else if(sum===21){
-        message="Wohoo! You've got 21! 🥳"
+        message="Wohoo! You've got 21!"
         messageEl.textContent=message;
         hasTwentyOne=true;
     }
     else{
-        message="You're out of the game! 😭"
+        message="You're out of the game!"
         messageEl.textContent=message;
         isAlive=false;
     }
 }
 
-function resetGame()
-{
-    hasTwentyOne=false;
-    isAlive=true;
 
-    sumEl.textContent="Sum: ";
-    cardsEl.textContent="Cards: ";
-
-    message="Want to play a round";
-    messageEl.textContent=message;
-}
 console.log(message);
