@@ -54,7 +54,16 @@ function renderGame()
 
 function getRandomNumber()
 {
-  return Math.ceil(Math.random()*11);
+    let cardNumber=Math.ceil(Math.random()*13);
+    if(cardNumber==1)
+    {
+        return 11;
+    }
+    else if(cardNumber==11||cardNumber==12||cardNumber==13)
+    {
+        return 10;
+    }
+  return cardNumber;
 }
 
 function newCard()
