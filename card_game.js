@@ -1,13 +1,12 @@
 
 let hasTwentyOne=false;
 let isAlive=true;
-
+let cards = []
+    let sum=0;
 let message="";
 const messageEl=document.getElementById("message-el");
 const sumEl=document.querySelector("main p:nth-child(4)");
 const cardsEl=document.getElementById("cards-el");
-
-let sum = 0;
 let card =0;
 
 
@@ -28,7 +27,13 @@ function startGame()
 function renderGame()
 {
 
-    cardsEl.textContent+=card+" - ";
+    cardsEl.textContent = "Cards: ";
+    
+    for(let i=0;i<cards.length;i++)
+    {
+     cardsEl.textContent +=" "+ cards[i];
+    }
+
     sumEl.textContent="Sum: "+sum;
 
     if(sum<21){
@@ -47,12 +52,16 @@ function renderGame()
     }
 }
 
-
+function getRandomNumber()
+{
+  return Math.ceil(Math.random()*11);
+}
 
 function newCard()
 {
-    card=Math.ceil(Math.random()*11);
+    card=getRandomNumber();
     sum+=card;
+    cards.push(card)
     renderGame();
 }
 
