@@ -9,12 +9,30 @@ const sumEl=document.querySelector("main p:nth-child(4)");
 const cardsEl=document.getElementById("cards-el");
 let card =0;
 
+let player={
+   name:"Player: ",
+   cash:100
+}
+
+const cashEl=document.getElementById("cash-el");
+cashEl.textContent+=player.name+(player.cash)+"$";
+
+function winning()
+{   
+    cashEl.textContent =" ";
+    player.cash+=10;
+    cashEl.textContent+=player.name+(player.cash)+"$";
+}
 
 function startGame()
 {
 
     sum=0;
     card=0;
+    cards=[];
+    
+    isAlive=true;
+    hasTwentyOne=false;
 
     cardsEl.textContent="Cards: "
     sumEl.textContent="Sum: "+sum;
@@ -44,6 +62,7 @@ function renderGame()
         message="Wohoo! You've got 21!"
         messageEl.textContent=message;
         hasTwentyOne=true;
+        winning();
     }
     else{
         message="You're out of the game!"
@@ -59,7 +78,7 @@ function getRandomNumber()
     {
         return 11;
     }
-    else if(cardNumber==11||cardNumber==12||cardNumber==13)
+    else if(cardNumber>10)
     {
         return 10;
     }
@@ -68,10 +87,17 @@ function getRandomNumber()
 
 function newCard()
 {
+    
+    if(hasTwentyOne==false&&isAlive){
+
     card=getRandomNumber();
     sum+=card;
     cards.push(card)
     renderGame();
+
+    }
+
+
 }
 
 
