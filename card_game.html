@@ -7,18 +7,58 @@
     <title>Card Game</title>
 </head>
 <body>
-    <main>
+    <div id="pop-up">
+        
+        <section id="pop-up-head">
+            <h3 id="rules-heading">How to play</h3>
+            <button id="close-btn">X</button>      
+        </section>
+        
+        <section id="pop-up-description">
+        <ul id="pop-up-list">
+            <li>Your goal is to get as close to 21 as possible without exceeding it.</li>
+            <li>The computer draws cards until it reaches at least 17.</li>
+            <li>You can draw a new card by pressing New Card or keep your current total by pressing Stay.</li>
+            <li>If your total is closer to 21 than the computer's, you win!</li>
+            <li>If your total is closer to 21 than the computer's, you win and gain +10 points!</li>
+            <li>If you lose, you lose -10 points.</li>
+            <li>If both totals are equal, it's a Draw.</li>
+        </ul>
+        </section>
+        
+        
+    </div>
+    <main>    
         <h1>Card Game</h1>
         <p id="message-el" class="message-cl">Want to play a round?</p>
-        <p id="cards-el">Cards: </p>
-        <p id="sum-el">Sum: </p>
 
-        <section class="buttons">
-            <button id="start-btn" onclick="startGame()">Start Game</button>
-            <button id="newcard-btn" onclick="newCard()">New Card</button>
+        <section class="player-container player">
+                <p id="cards-el">Your cards: </p>
+                <p id="sum-el">Sum: </p>
         </section>
+                
+        <section class="player-container computer">
+                <p id="computer">Computer cards: ?</p>
+                <p id="computer-sum"></p>
+        </section>
+                
 
-        <p id="cash-el"></p>
+
+
+
+        <div class="button-container">
+            <section class="buttons">
+                <button id="newcard-btn" onclick="newCard()">New Card</button>
+                <button id="stay-btn">Stay</button>
+            </section>
+            <section class="buttons">
+                <button id="start-btn" onclick="startGame()">New Game</button>
+                <button id="help-btn">Help</button>  
+            </section>
+        </div>
+
+        <p id="score-el"></p>
+        
 
         <script src="./card_game.js"></script>
     </main>

@@ -13,36 +13,147 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+
 }
 h1 {
-
-    color: rgb(0, 212, 0);
-    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: green;
+    width: 100%;
     white-space: nowrap;
+    height: 7rem;
 }
 main{
     border: 1px solid;
-    padding: 5rem;
     min-width: 50%;
-    min-height: 100%;
     background-color: rgba(0, 0, 0, 0.375);
     font-weight: bolder;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: larger;
+    font-size: large;
     
 }
 main p{
-margin-top:2rem;
-color:silver;
-white-space: nowrap;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    color:silver;
+    white-space: nowrap;
+}
+.player-container
+{
+    font-size: 1.1rem;
+    width: 250px;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+.player
+{
+    background-color: rgb(4, 120, 0);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.computer
+{
+    background-color: rgb(0, 0, 120);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+#help-btn
+{
+ background-color: rgba(240, 255, 255, 0.812);
+ color: black;
+}
+#help-btn:hover
+{
+ background-color: rgba(240, 255, 255, 0.434);
+ color: black;
+}
+#pop-up
+{
+    position:absolute;
+    top:3rem;
+    bottom:3rem;
+    background:linear-gradient(rgb(21, 80, 0), rgb(88, 176, 61));
+    width: 75%;
+    border-radius: 3rem;
+}
+#pop-up-head
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.343);
+    border-radius: 3rem 3rem 0 0;
+    padding-bottom:1rem ;
+}
+#rules-heading
+{
+    font-size: 5rem;
+    margin: 1rem auto 0 auto;
+    color: white;
+}
+#pop-up-list
+{
+    padding: 2rem;
+}
+#pop-up-list li
+{
+    margin-bottom: 1rem;
+}
+#pop-up-description
+{
+    margin: 2rem 3rem;
+    padding: 1rem;
+    color: white;
+}
+#close-btn
+{
+    display: block;
+    background-color: rgb(154, 0, 0);
+    border: none;
+    color:white;
+    text-shadow: 0 0 .2rem black;
+    font-size: 2rem;
+    width: 5rem;
+    height: 5rem;
+    padding:.3rem;
+    margin:1.5rem 1.5rem 0 auto;
+    border-radius: 2rem ;
+    font-family: cursive;
+    cursor:pointer;
+}
+#close-btn:hover
+{
+    background-color: red;
+}
+#close-btn:active
+{
+    background-color: rgb(154, 0, 0);
+}
+#score-el
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color:rgb(94, 94, 0) ;
+    width: 100%;
+    font-size: larger;
 }
 .message-cl
 {
     font-style: italic;
+    color: rgb(236, 25, 255);
+    padding:1.5rem;
+    text-shadow: 0 0 1rem black;
+    font-size: larger;
 }   
 .buttons{
     display: flex;
@@ -50,27 +161,45 @@ white-space: nowrap;
     align-items:center;
     justify-content: space-evenly;
     gap:1rem;
-    margin-top:3rem
+    margin-bottom:1.5rem
 }
 .buttons button
 {
     padding:1rem;
-    background-color: rgba(172, 255, 47, 0.494);
-    font-size: 2rem;
+    background-color: rgba(172, 255, 47, 0.761);
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius: 1rem;
     border: none;
     cursor:pointer;
     color:green;
 }
+#start-btn
+{
+    background-color: rgba(34, 255, 0, 0.719);
+}
+#start-btn:hover
+{
+  background-color: rgba(172, 255, 47, 0.412);
+}
+#start-btn:active
+{
+    background-color: rgba(34, 255, 0, 0.719);
+}
 
 .buttons button:nth-child(1)
 {
     white-space:nowrap;
 }
+.buttons button:nth-child(1)
+{
+    background-color: rgba(0, 119, 255, 0.814);
+    color: rgb(0, 0, 120);
+    white-space: nowrap;
+}
 .buttons button:nth-child(2)
 {
-    background-color: rgba(0, 0, 255, 0.525);
+    background-color: rgba(140, 0, 255, 0.814);
     color: rgb(0, 0, 120);
     white-space: nowrap;
 }
@@ -82,10 +211,23 @@ white-space: nowrap;
 }
 .buttons button:hover
 {
-  background-color: rgb(172, 255, 47);;
+  background-color: rgba(172, 255, 47, 0.412);;
+}
+
+.buttons button:nth-child(1):hover
+{
+  background-color: rgba(0, 119, 255, 0.363);
+}
+.buttons button:nth-child(1):active
+{
+  background-color: rgba(0, 119, 255, 0.814);
 }
 
 .buttons button:nth-child(2):hover
 {
-  background-color: rgb(80, 49, 255);
+  background-color: rgba(140, 0, 255, 0.623);
+}
+.buttons button:nth-child(2):active
+{
+  background-color: rgba(140, 0, 255, 0.814);
 }
