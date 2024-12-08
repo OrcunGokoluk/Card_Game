@@ -1,6 +1,8 @@
 # Card_Game
+
+## Overview
  
-This is basically a classic Blackjack game where you play against the computer.
+This is a classic Blackjack game where you play against the computer. Press the 'Stay' button to end your turn and let the computer draw random cards until its total exceeds 17. Computer will draw a card every 1 second. Depending on whether you win or lose, you will gain or lose score points.
 
 ## How to play
 

@@ -180,23 +180,25 @@ function wait(ms) {
 
 stayBtn.addEventListener("click", function()
 {
+    
     if(!sum==0&&isAlive==true)
     {
         computerSum=0;
         computerEl.textContent="Computer cards: "
-        while(computerSum<17)
-        {
-            computerCard=getRandomNumber();
-            computerSum+=computerCard;
-            computerEl.textContent+=" "+computerCard;
-            computerCards.push(computerCard);
-        }
-
-        computerSumEl.textContent="Sum: "+computerSum;
-
-        winnerDecider();
-
-        isAlive=false;
+        const intervalId = setInterval(function() {
+            
+            if (computerSum < 17) {
+                    const computerCard = getRandomNumber();
+                    computerSum += computerCard;
+                    computerEl.textContent += " " + computerCard;
+                    computerCards.push(computerCard);
+                    computerSumEl.textContent = "Sum: " + computerSum;} 
+            else {
+                    clearInterval(intervalId);
+                    winnerDecider();
+                    isAlive = false;
+                }
+            }, 1000);
     }
 })
 
